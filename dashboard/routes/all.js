@@ -21,16 +21,7 @@ router.get('/widget', vhost(host, async(req, res) => {
 	await paymentData.save();
 }));
 router.get('/', vhost(host, async(req, res) => {
-	if (req.session.user == null){
-        res.render("index.ejs", {
-            is_logged: false
-        });
-    } else {
-        res.render("index.ejs", {
-            is_logged: true,
-            udata : req.session.user
-        });
-    }
+    res.render("index.ejs");
 }));
 router.post('/', vhost(host, async(req, res) => {
 	let paymentData = await paymentsData.findOne({ id: 1 });
