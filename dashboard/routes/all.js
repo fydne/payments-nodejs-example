@@ -1,4 +1,4 @@
-const vhost = require('../../vhost');
+const vhost = require('vhost');
 const express = require("express"),
 router = express.Router();
 let paymentsData = require("../../base/payments");
